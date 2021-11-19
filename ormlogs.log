@@ -133,3 +133,25 @@
 [2021-11-06T13:06:51.895Z][QUERY]: SELECT `ExampleEntity`.`id_example_table` AS `ExampleEntity_id_example_table`, `ExampleEntity`.`created_at` AS `ExampleEntity_created_at`, `ExampleEntity`.`updated_at` AS `ExampleEntity_updated_at`, `ExampleEntity`.`deleted_at` AS `ExampleEntity_deleted_at` FROM `example_table` `ExampleEntity` WHERE ( `ExampleEntity`.`id_example_table` = ? ) AND ( `ExampleEntity`.`deleted_at` IS NULL ) -- PARAMETERS: [2]
 [2021-11-06T13:06:51.897Z][QUERY]: COMMIT
 [2021-11-06T13:13:28.643Z][QUERY]: SELECT `ExampleEntity`.`id_example_table` AS `ExampleEntity_id_example_table`, `ExampleEntity`.`name` AS `ExampleEntity_name`, `ExampleEntity`.`created_at` AS `ExampleEntity_created_at`, `ExampleEntity`.`updated_at` AS `ExampleEntity_updated_at`, `ExampleEntity`.`deleted_at` AS `ExampleEntity_deleted_at` FROM `example_table` `ExampleEntity` WHERE `ExampleEntity`.`deleted_at` IS NULL
+[2021-11-06T21:14:28.003Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'stock_management' AND `TABLE_NAME` = 'migrations'
+[2021-11-06T21:14:28.497Z][QUERY]: CREATE TABLE `migrations` (`id` int NOT NULL AUTO_INCREMENT, `timestamp` bigint NOT NULL, `name` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB
+[2021-11-06T21:14:38.416Z][QUERY]: SELECT * FROM `stock_management`.`migrations` `migrations` ORDER BY `id` DESC
+[2021-11-06T21:14:39.016Z]0 migrations are already loaded in the database.
+[2021-11-06T21:14:39.017Z]1 migrations were found in the source code.
+[2021-11-06T21:14:39.017Z]1 migrations are new migrations that needs to be executed.
+[2021-11-06T21:14:39.017Z][QUERY]: START TRANSACTION
+[2021-11-06T21:14:39.053Z][QUERY]: CREATE TABLE `example_table` (`id_example_table` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL DEFAULT now(), `updated_at` datetime NOT NULL DEFAULT now(), `deleted_at` datetime NULL, PRIMARY KEY (`id_example_table`)) ENGINE=InnoDB
+[2021-11-06T21:14:41.560Z][QUERY]: INSERT INTO `stock_management`.`migrations`(`timestamp`, `name`) VALUES (?, ?) -- PARAMETERS: [1636157284909,"stockManagementExampleMigration1636157284909"]
+[2021-11-06T21:14:42.035Z]Migration stockManagementExampleMigration1636157284909 has been executed successfully.
+[2021-11-06T21:14:42.035Z][QUERY]: COMMIT
+[2021-11-18T21:05:15.959Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'stock_management' AND `TABLE_NAME` = 'migrations'
+[2021-11-18T21:05:17.971Z][QUERY]: SELECT * FROM `stock_management`.`migrations` `migrations` ORDER BY `id` DESC
+[2021-11-18T21:05:19.178Z]1 migrations are already loaded in the database.
+[2021-11-18T21:05:19.178Z]1 migrations were found in the source code.
+[2021-11-18T21:05:19.424Z]stockManagementExampleMigration1636157284909 is the last executed migration. It was executed on Fri Nov 05 2021 21:08:04 GMT-0300 (Horário Padrão de Brasília).
+[2021-11-18T21:05:19.425Z]1 migrations are new migrations that needs to be executed.
+[2021-11-18T21:05:19.426Z][QUERY]: START TRANSACTION
+[2021-11-18T21:05:19.437Z][QUERY]: CREATE TABLE `general_stock` (`id_general_stock` int NOT NULL AUTO_INCREMENT, `id_general_company` int NOT NULL, `id_general_product` int NOT NULL, `description` varchar(200) NOT NULL, PRIMARY KEY (`id_general_stock`)) ENGINE=InnoDB
+[2021-11-18T21:05:29.453Z][QUERY]: INSERT INTO `stock_management`.`migrations`(`timestamp`, `name`) VALUES (?, ?) -- PARAMETERS: [1636978812314,"stockManagementStockCreateTable1636978812314"]
+[2021-11-18T21:05:30.020Z]Migration stockManagementStockCreateTable1636978812314 has been executed successfully.
+[2021-11-18T21:05:30.021Z][QUERY]: COMMIT

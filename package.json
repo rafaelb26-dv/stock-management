@@ -1,30 +1,39 @@
 {
-   "name": "stock-management",
-   "version": "1.0.0",
-   "type": "module",
-   "description": "",
-   "main": "index.js",
-   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start:dev": "ts-node-dev --inspect --ignore-watch node_modules src/shared/infra/http/server.ts",
-      "start": "ts-node src/index.ts",
-      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
-   },
-   "keywords": [],
-   "author": "[Jbarcella, Lucas Fernandes, Rafael Bastos, Rafael Freitas]",
-   "license": "ISC",
-   "dependencies": {
-      "express": "^4.17.1",
-      "mysql": "^2.14.1",
-      "reflect-metadata": "^0.1.10",
-      "tsyringe": "^4.6.0",
-      "typeorm": "0.2.38"
-   },
-   "devDependencies": {
-      "@types/express": "^4.17.13",
-      "@types/node": "^8.0.29",
-      "ts-node": "3.3.0",
-      "ts-node-dev": "^1.1.8",
-      "typescript": "^4.1.3"
-   }
+  "name": "stock-management",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Steps to run this project:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "ts-node-dev --inspect --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "start": "ts-node src/index.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "keywords": [],
+  "author": "[Jbarcella, Lucas Fernandes, Rafael Bastos, Rafael Freitas]",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.14.1",
+    "node": "^17.0.1",
+    "reflect-metadata": "^0.1.10",
+    "tsyringe": "^4.6.0",
+    "typeorm": "0.2.38"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^8.0.29",
+    "ts-node": "^3.3.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelb26-dv/stock-management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafaelb26-dv/stock-management/issues"
+  },
+  "homepage": "https://github.com/rafaelb26-dv/stock-management#readme"
 }
