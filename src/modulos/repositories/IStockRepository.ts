@@ -1,6 +1,6 @@
-import stockDTO from "../DTO/stockDTO";
+import IStockDTO from "../DTO/IStockDTO";
 
 export default interface IStockRepository {
-    create(data: stockDTO): Promise<stockDTO>;
-    find(): Promise<stockDTO[]>;
+    create(data: IStockDTO): Promise<IStockDTO>;
+    find(): Promise<IStockDTO[]>;
 }

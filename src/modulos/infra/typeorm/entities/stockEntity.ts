@@ -1,41 +1,23 @@
-import stockDTO from "../../../DTO/stockDTO";
-import {Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import IStockDTO from "../../../DTO/IStockDTO";
+import {Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import ProductEntity from "./productEntity";
+import CompanyEntity from "./companyEntity";
 
 
 
-@Entity('id_general_stock')
-export default class stockEntity implements stockDTO {
+@Entity('general_stock')
+export default class StockEntity implements IStockDTO {
     @PrimaryGeneratedColumn({name: 'id_general_stock'})
-    id!: number;
+    id?:number;
 
-    @Column()
-    name!: string;
+    @OneToOne(()=> ProductEntity)
+    @JoinColumn({name:'id_general_product'})
+    product: ProductEntity;
 
-    @Column()
-    id_general_company: number;
+    @ManyToOne(()=> CompanyEntity)
+    @JoinColumn({name:'id_general_company'})
+    company: CompanyEntity;
 
-    @Column()
-    id_general_stock:number;
-
-    @Column()
-    id_general_product: number;
-
-    @Column()
+    @Column({name:'description'})
     description: string
-
-
-
-    @CreateDateColumn({
-        name: "created_at",
-    })
-    createdAt!: Date;
-
-    @UpdateDateColumn({
-        name: "updated_at",
-    })
-    updatedAt!: Date;
-
-    @DeleteDateColumn({
-        name: "deleted_at",
-    })
-    deletedAt!: Date;
+}

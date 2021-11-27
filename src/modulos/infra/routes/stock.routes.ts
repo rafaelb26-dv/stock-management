@@ -1,9 +1,10 @@
 import {Router} from 'express';
-import stockController from "../controllers/stockController";
+import StockController from '../http/controllers/stockController';
+
 
 const stockModule = Router();
-const stockController = new stockController();
+const stockController = new StockController();
 
-stockModule.get('', stockController.listExample)
+stockModule.get('', stockController.listStock)
 
 export default stockModule;

@@ -155,3 +155,6 @@
 [2021-11-18T21:05:29.453Z][QUERY]: INSERT INTO `stock_management`.`migrations`(`timestamp`, `name`) VALUES (?, ?) -- PARAMETERS: [1636978812314,"stockManagementStockCreateTable1636978812314"]
 [2021-11-18T21:05:30.020Z]Migration stockManagementStockCreateTable1636978812314 has been executed successfully.
 [2021-11-18T21:05:30.021Z][QUERY]: COMMIT
+[2021-11-26T23:26:04.293Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'stock_management' AND `TABLE_NAME` = 'migrations'
+[2021-11-26T23:26:04.546Z][QUERY]: SELECT * FROM `stock_management`.`migrations` `migrations` ORDER BY `id` DESC
+[2021-11-26T23:26:04.579Z]No migrations are pending

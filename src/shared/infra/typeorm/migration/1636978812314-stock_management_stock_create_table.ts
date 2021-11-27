@@ -1,8 +1,44 @@
-import {MigrationInterface, QueryRunner,Table, TableColumn} from "typeorm";
+import {MigrationInterface, QueryRunner,Table, TableColumn,TableForeignKey} from "typeorm";
 
 export class stockManagementStockCreateTable1636978812314 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.createTable(new Table({
+            name: "general_product",
+            columns: [
+                
+                new TableColumn({
+                    name: 'id_general_product',
+                    type: 'int',
+                    isPrimary: true,
+                    isGenerated: true,
+                    generationStrategy: 'increment',
+                    isNullable: false
+                }),
+            
+            ]
+        }))
+        
+        
+        
+
+        await queryRunner.createTable(new Table({
+             name: "general_company",
+             columns: [
+                    
+                new TableColumn({
+                    name: 'id_general_company',
+                    type: 'int',
+                    isPrimary: true,
+                    isGenerated: true,
+                    generationStrategy: 'increment',
+                    isNullable: false
+                }),
+             ]
+        }))
+        
+            
+                
         await queryRunner.createTable(new Table({
             name: "general_stock",
             columns: [
@@ -20,6 +56,7 @@ export class stockManagementStockCreateTable1636978812314 implements MigrationIn
                     name: 'id_general_company',
                     type: 'int',
                     isNullable: false,
+                    
                 }),
 
                 new TableColumn({
@@ -39,13 +76,12 @@ export class stockManagementStockCreateTable1636978812314 implements MigrationIn
             
             
         }))
-
     }
+    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('general_stock');
+        await queryRunner.dropTable('general_company');
+        await queryRunner.dropTable('general_product')
 
-
-    }
-
-}
+    }}

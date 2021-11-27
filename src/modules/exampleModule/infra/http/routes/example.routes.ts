@@ -6,4 +6,5 @@ const exampleController = new ExampleController();
 
 exampleModule.get('', exampleController.listExample)
 
+
 export default exampleModule;
